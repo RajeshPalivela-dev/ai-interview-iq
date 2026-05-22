@@ -8,6 +8,9 @@ const app=express()
 app.use(cors())
 
 
+// const dns = require("dns");
+// dns.setServers(["8.8.8.8", "1.1.1.1"]); // Use Google or Cloudflare DNS
+
 mongoose.connect(process.env.DB_URI).then(()=>{
     console.log("dbconnected")
 }).catch((err)=>{
