@@ -3,6 +3,7 @@ dotenv.config()
 import express from 'express'
 import  cors from 'cors'
 import mongoose from 'mongoose'
+import authRouter from './routes/auth.js'
 
 const app=express()
 app.use(cors())
@@ -19,6 +20,7 @@ mongoose.connect(process.env.DB_URI).then(()=>{
 
 
 
+app.use("/auth",authRouter)
  const port=process.env.PORT
 
  
